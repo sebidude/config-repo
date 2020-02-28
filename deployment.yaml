@@ -4,6 +4,7 @@ metadata:
   labels:
     app: webtest
   name: webtest
+  namespace: test
   annotations:
     fluxcd.io/automated: "true"
     #fluxcd.io/tag.webtest: regex:^3.10.*
