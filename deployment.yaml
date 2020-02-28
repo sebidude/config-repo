@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: webtest
+  name: webtest
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webtest
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: webtest
+    spec:
+      containers:
+      - image: sebidude/webtest
+        name: webtest
+        resources: {}
+        env:
+          - name: LISTEN_ADDRESS
+            valueFrom:
+              configMapKeyRef:
+                name: webtest
+                key: listenAddress
+status: {}
