@@ -24,7 +24,10 @@ spec:
         app: webtest
     spec:
       containers:
-      - image: sebidude/webtest
+      - image: alpine
+        command: 
+        - sleep
+        - inf
         name: webtest
         resources: {}
         env:
