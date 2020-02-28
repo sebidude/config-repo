@@ -33,4 +33,12 @@ spec:
               configMapKeyRef:
                 name: webtest
                 key: listenAddress
+        volumeMounts:
+        - name: config-volume
+          mountPath: /etc/config
+      volumes:
+      - name: config-volume
+        configMap:
+          name: webtest
+
 status: {}
